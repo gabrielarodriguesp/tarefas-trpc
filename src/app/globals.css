@@ -1,0 +1,168 @@
+:root {
+  --fundo: #f6f4ef;
+  --texto: #1c1b19;
+  --suave: #6b675f;
+  --linha: #d9d5cb;
+  --destaque: #1f5f4a;
+  --perigo: #a4262c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 42rem;
+  padding: 24px 16px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+p {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: var(--destaque);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linha);
+}
+
+li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+li > div {
+  min-width: 0;
+}
+
+.data {
+  display: block;
+  margin-top: 4px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8125rem;
+  color: var(--suave);
+}
+
+.muted {
+  color: var(--suave);
+}
+
+[role="alert"] {
+  color: var(--perigo);
+}
+
+button {
+  flex: none;
+  padding: 4px 12px;
+  border: 1px solid var(--linha);
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--texto);
+}
+
+button:disabled {
+  color: var(--suave);
+  cursor: default;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+li > .acoes {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--linha);
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.botoes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+button.primario {
+  border-color: var(--destaque);
+  background: var(--destaque);
+  color: var(--fundo);
+}
+
+button.primario:hover:not(:disabled) {
+  border-color: var(--destaque);
+  opacity: 0.9;
+}
+
+button.primario:disabled {
+  border-color: var(--linha);
+  background: var(--linha);
+  color: var(--suave);
+}
