@@ -4,24 +4,28 @@ Gerenciador de tarefas em Next.js com tRPC: lista com rolagem infinita, criaçã
 
 ## Como rodar a aplicação
 
-Através do Docker:
+Primeiramente, basta abrir um terminal na página do projeto.
+Então, utilize o comando Docker:
 
-    sh iniciar.sh
+    docker compose up
 
-Obs: É preciso utilizar a primeira porta livre a partir da 3000. O endereço aparece no final.
+Depois disso, basta iniciar a aplicação e aguardar:
 
-No Windows use `iniciar.cmd`. 
-Para sair da aplicação, basta digitar o comando `docker compose down`.
+    iniciar.cmd
 
-Sem Docker, com Node 24:
+
+Observações importantes: 
+- É preciso utilizar a primeira porta livre a partir da 3000. O endereço aparece no final.
+- Para sair da aplicação, basta digitar o comando `docker compose down`.
+- Sem Docker, com Node 24:
 
     npm install && npm run dev
 
-Comando para testes:
+- Comando para testes:
 
     npm test
 
-A app vem com 30 tarefas de exemplo.
+- A app vem com 30 tarefas de exemplo.
 
 ## Outras informações
 
