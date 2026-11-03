@@ -1,0 +1,29 @@
+name: tarefas
+
+x-node: &node
+  image: node:24.22.2-bookworm-slim
+  user: "${UID:-1000}:${GID:-1000}"
+  working_dir: /app
+  volumes:
+    - ./:/app
+  environment:
+    HOME: /tmp
+    SEED_TAREFAS: ${SEED_TAREFAS:-30}
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options:
+      max-size: 10m
+      max-file: "3"
+
+services:
+  dev:
+    <<: *node
+    command: sh -c "npm install && npm run dev -- -H 0.0.0.0"
+    ports:
+      - "127.0.0.1:${PORT:-3000}:3000"
+
+  tools:
+    <<: *node
+    profiles: [tools]
+    restart: "no"
